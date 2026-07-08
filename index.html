@@ -43,6 +43,11 @@ a:hover{text-decoration:underline}
 .metrics .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:26px;text-align:center}
 .metric .num{font-size:30px;font-weight:800;color:var(--accent);line-height:1.1}
 .metric .lbl{font-size:13.5px;color:var(--sub);margin-top:4px}
+.metric{position:relative;cursor:pointer;border-radius:10px;padding:6px 4px;transition:background .15s}
+.metric:hover{background:#eef1f5}
+.metric .lbl::after{content:" ⓘ";color:var(--accent);font-size:11px}
+.metric .tip{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:13px;font-weight:400;line-height:1.55;padding:12px 15px;border-radius:10px;width:250px;z-index:20;text-align:start;box-shadow:0 10px 28px rgba(0,0,0,.22)}
+.metric.open .tip{display:block}
 
 /* sections */
 section{padding:56px 0}
@@ -128,12 +133,12 @@ footer .sub{color:var(--sub);margin-top:6px}
 
 <div class="metrics">
   <div class="wrap">
-    <div class="metric"><div class="num">15+</div><div class="lbl" data-i18n="m1"></div></div>
-    <div class="metric"><div class="num">$1.5M</div><div class="lbl" data-i18n="m2"></div></div>
-    <div class="metric"><div class="num">88%</div><div class="lbl" data-i18n="m3"></div></div>
-    <div class="metric"><div class="num">3,000+</div><div class="lbl" data-i18n="m4"></div></div>
-    <div class="metric"><div class="num">9,000</div><div class="lbl" data-i18n="m5"></div></div>
-    <div class="metric"><div class="num">120%</div><div class="lbl" data-i18n="m6"></div></div>
+    <div class="metric"><div class="num">15+</div><div class="lbl" data-i18n="m1"></div><div class="tip" data-i18n="m1d"></div></div>
+    <div class="metric"><div class="num">$1.5M</div><div class="lbl" data-i18n="m2"></div><div class="tip" data-i18n="m2d"></div></div>
+    <div class="metric"><div class="num">88%</div><div class="lbl" data-i18n="m3"></div><div class="tip" data-i18n="m3d"></div></div>
+    <div class="metric"><div class="num">3,000+</div><div class="lbl" data-i18n="m4"></div><div class="tip" data-i18n="m4d"></div></div>
+    <div class="metric"><div class="num">9,000</div><div class="lbl" data-i18n="m5"></div><div class="tip" data-i18n="m5d"></div></div>
+    <div class="metric"><div class="num">120%</div><div class="lbl" data-i18n="m6"></div><div class="tip" data-i18n="m6d"></div></div>
   </div>
 </div>
 
@@ -250,9 +255,15 @@ const T = {
 en: {
   role:"VP Product & COO",
   tagline:"Product & operations leadership · strategy to execution · scaling products, teams & systems. I turn complexity into clarity — across EdTech, nonprofits, AI and startups.",
-  location:"Pardes Hana-Karkur, Israel",
+  location:"Harish, Israel",
   m1:"Years of leadership", m2:"Raised for organizational LMS", m3:"Digital adoption in 30 days",
   m4:"Volunteers & staff trained", m5:"Students in national program", m6:"Teacher-pool growth",
+  m1d:"Over 15 years leading operations, product and learning — across a startup I co-founded, a national university program, a leading nonprofit, a global tech company, and IDF command roles.",
+  m2d:"Secured a $1.5M donation from the Jewish Federation of New York to build PAAMONIM's in-house LMS — I led the full fundraising proposal and stakeholder process in English.",
+  m3d:"During COVID I migrated 88% of 3,000+ tech-averse, older-demographic volunteers to Zoom-based remote delivery within 30 days. Client satisfaction rose from 90% to 94%.",
+  m4d:"Built PAAMONIM's centralized e-learning infrastructure (LMS, webinars, public MOOC) from scratch — training 3,000+ volunteers and staff and reaching ~300,000 information consumers.",
+  m5d:"Managed Bar-Ilan University's national gifted-youth program: ~9,000 students in grades 6–10, across 30 centers, with ~70 teachers.",
+  m6d:"Redesigned teacher recruitment at Bar-Ilan — hiring doctors, lawyers, physicists and engineers and training them as educators. Teacher pool grew 120%, dropout fell from 32% to 12%.",
   aboutTitle:"About",
   aboutP1:"Senior operations and learning leader with 15+ years turning strategy into execution. I've built learning systems, operational frameworks and cross-functional teams from scratch — in a startup I co-founded, a national university program, a leading nonprofit, and a tech company scaling globally.",
   aboutP2:"My track record is measurable: 88% digital adoption in 30 days during COVID, 120% growth in teacher recruitment, $1.5M raised to build an organizational LMS. A command and logistics background as an IDF reserves officer taught me that structure and empathy are not opposites.",
@@ -311,9 +322,12 @@ en: {
       "Developed psychometric-prep curriculum; published 500+ video tutorials; taught students with learning disabilities."]}
   ],
   mil:[
-    {t:"Deputy Battalion Commander · Officer Course Commander (Res.)",o:"IDF – Military Police / Combat Logistics",d:"2003 – Present",b:[
+    {t:"Officer Course Commander (Res.)",o:"IDF – Military Police",d:"2024 – Present",b:[
+      "Command the corps' reserve officers' course — built and led it during the Swords of Iron War.",
+      "Training the next generation of commanders and leaders: designing and leading field exercises, developing leadership skills and evaluating officer cadets.",
+      "Awarded a Certificate of Appreciation by the IDF Military Police Commander (March 2025) for wartime service and for leading the course."]},
+    {t:"Deputy Battalion Commander (Res.)",o:"IDF – Military Police / Combat Logistics",d:"2023 – Present",b:[
       "Integrated 75% new recruits at the start of the war; unit achieved test scores of 93–100 within one month — significantly above comparable units.",
-      "Commands the reserve officers' course: designs and leads field exercises, developing the next generation of commanders.",
       "Previously Company Commander (2019–2023) and Platoon Commander (2003–2019)."]},
     {t:"CID Base Commander, Beit Lechem",o:"IDF – Military Police (Career Service)",d:"1999 – 2003",b:[
       "Criminal Investigator → Investigating Officer → Base Commander; led sensitive investigations with emphasis on legality, ethics and conflict resolution."]}
@@ -325,9 +339,15 @@ en: {
 he: {
   role:"סמנכ״ל מוצר ותפעול (VP Product & COO)",
   tagline:"מנהיגות מוצר ותפעול · מאסטרטגיה לביצוע · הצמחת מוצרים, צוותים ומערכות. הופך מורכבות לבהירות — באדטק, מגזר שלישי, AI וסטארטאפים.",
-  location:"פרדס חנה-כרכור, ישראל",
+  location:"חריש, ישראל",
   m1:"שנות ניהול והובלה", m2:"גיוס תרומה ל-LMS ארגוני", m3:"אימוץ דיגיטלי ב-30 יום",
   m4:"מתנדבים ועובדים בהדרכה", m5:"תלמידים בתוכנית ארצית", m6:"צמיחה במאגר המורים",
+  m1d:"יותר מ-15 שנות הובלה של תפעול, מוצר ולמידה — בסטארטאפ שהקמתי, בתוכנית אוניברסיטאית ארצית, בעמותה מובילה, בחברת טכנולוגיה גלובלית ובתפקידי פיקוד בצה״ל.",
+  m2d:"גייסתי תרומה של 1.5 מיליון דולר מהפדרציה היהודית של ניו יורק להקמת LMS ארגוני בפעמונים — הובלתי את הצעת הגיוס ואת כל תהליך העבודה מול בעלי העניין באנגלית.",
+  m3d:"בתקופת הקורונה העברתי 88% מתוך 3,000+ מתנדבים (אוכלוסייה מבוגרת ומרוחקת טכנולוגית) לליווי מרחוק בזום בתוך 30 יום. שביעות רצון הלקוחות עלתה מ-90% ל-94%.",
+  m4d:"בניתי מאפס את תשתית הלמידה הדיגיטלית של פעמונים (LMS, וובינרים, MOOC ציבורי) — הדרכה ל-3,000+ מתנדבים ועובדים והגעה לכ-300,000 צרכני מידע.",
+  m5d:"ניהלתי את התוכנית הארצית למחוננים של אוניברסיטת בר-אילן: כ-9,000 תלמידים בכיתות ו׳–י׳, ב-30 מרכזים, עם כ-70 מורים.",
+  m6d:"עיצבתי מחדש את גיוס המורים בבר-אילן — גיוס רופאים, עורכי דין, פיזיקאים ומהנדסים והכשרתם כמורים. מאגר המורים צמח ב-120%, הנשירה ירדה מ-32% ל-12%.",
   aboutTitle:"עליי",
   aboutP1:"מנהל בכיר בתחומי התפעול והלמידה עם ניסיון של 15+ שנים בהפיכת אסטרטגיה לביצוע. בניתי מערכות למידה, תשתיות תפעוליות וצוותים חוצי-ארגון מאפס — בסטארטאפ שהקמתי, בתוכנית אוניברסיטאית ארצית, בעמותה מובילה ובחברת טכנולוגיה גלובלית.",
   aboutP2:"התוצאות מדידות: 88% אימוץ דיגיטלי ב-30 יום בתקופת הקורונה, צמיחה של 120% בגיוס מורים, וגיוס 1.5 מיליון דולר להקמת LMS ארגוני. רקע פיקודי ולוגיסטי כקצין מילואים בצה״ל לימד אותי שמבנה ואמפתיה אינם הפכים.",
@@ -386,9 +406,12 @@ ctaTitle:"בואו נדבר", ctaSub:"פתוח לתפקידי Director / VP בת
       "פיתחתי תוכנית לימודים להכנה לפסיכומטרי; פרסמתי 500+ סרטוני הדרכה; לימדתי תלמידים עם לקויות למידה."]}
   ],
   mil:[
-    {t:"סגן מפקד גדוד · מפקד קורס קצינים (מיל׳)",o:"צה״ל – משטרה צבאית / לוגיסטיקה קרבית",d:"2003 – היום",b:[
+    {t:"מפקד קורס קצינים חילי (מיל׳)",o:"צה״ל – משטרה צבאית",d:"2024 – היום",b:[
+      "מפקד קורס קציני המילואים החילי — הקמתי והובלתי אותו במהלך מלחמת חרבות ברזל.",
+      "מכשיר את דור המפקדים והמנהלים הבא: תכנון והובלה של תרגילי שטח, פיתוח מנהיגות והערכת צוערים.",
+      "הוענקה לי תעודת הערכה ממפקד המשטרה הצבאית (מרץ 2025) על הפעילות במלחמה ועל הובלת הקורס."]},
+    {t:"סגן מפקד גדוד (מיל׳)",o:"צה״ל – משטרה צבאית / לוגיסטיקה קרבית",d:"2023 – היום",b:[
       "קלטתי 75% מתגייסים חדשים בתחילת המלחמה; היחידה השיגה ציוני מבחנים של 93–100 בתוך חודש — משמעותית מעל יחידות מקבילות.",
-      "מפקד קורס קציני המילואים: מתכנן ומוביל תרגילי שטח ומפתח את דור המפקדים הבא.",
       "קודם לכן: מפקד פלוגה (2019–2023) ומפקד מחלקה (2003–2019)."]},
     {t:"מפקד בסיס מצ״ח בית לחם",o:"צה״ל – משטרה צבאית (שירות קבע)",d:"1999 – 2003",b:[
       "חוקר פלילי ← קצין חקירות ← מפקד בסיס; הובלתי חקירות רגישות בדגש על חוקיות, אתיקה ופתרון קונפליקטים."]}
@@ -417,10 +440,20 @@ function render(){
     </div>`).join('');
   document.getElementById('jobs').innerHTML = jobHtml(t.jobs);
   document.getElementById('miljobs').innerHTML = jobHtml(t.mil);
-  document.getElementById('reccards').innerHTML = t.recs.map(r=>`<div class="card rec-card"><p>${r.txt}</p><div class="who"><a href="${r.url}" target="_blank" rel="noopener" class="nm">${r.n}</a><span class="rl">${r.r}</span></div></div>`).join('');
+  document.getElementById('reccards').innerHTML = t.recs.map(r=>`<div class="card rec-card"><p dir="auto">${r.txt}</p><div class="who"><a href="${r.url}" target="_blank" rel="noopener" class="nm">${r.n}</a><span class="rl">${r.r}</span></div></div>`).join('');
   const chips=(id,arr,hl)=>{document.getElementById(id).innerHTML=arr.map((c,i)=>`<span class="chip${hl&&i<4?' hl':''}">${c}</span>`).join('');};
   chips('chips1',t.chips1,true); chips('chips2',t.chips2,false); chips('chips3',t.chips3,false);
 }
+
+document.querySelectorAll('.metric').forEach(m=>{
+  m.addEventListener('click',()=>{
+    document.querySelectorAll('.metric').forEach(x=>{if(x!==m)x.classList.remove('open')});
+    m.classList.toggle('open');
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.metric')) document.querySelectorAll('.metric').forEach(x=>x.classList.remove('open'));
+});
 
 function toggleLang(){
   lang = lang==='en' ? 'he' : 'en';
