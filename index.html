@@ -118,7 +118,7 @@ footer .sub{color:var(--sub);margin-top:6px}
 <header class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <h1>Aran Nachmias</h1>
+      <h1 data-i18n="name"></h1>
       <div class="role" data-i18n="role"></div>
       <p class="tagline" data-i18n="tagline"></p>
       <div class="contact-row">
@@ -148,6 +148,7 @@ footer .sub{color:var(--sub);margin-top:6px}
     <h2 data-i18n="aboutTitle"></h2>
     <p data-i18n="aboutP1" style="max-width:760px"></p>
     <p data-i18n="aboutP2" style="max-width:760px;margin-top:14px"></p>
+    <p data-i18n="aboutP3" style="max-width:760px;margin-top:14px"></p>
   </div>
 </section>
 
@@ -240,6 +241,26 @@ footer .sub{color:var(--sub);margin-top:6px}
   </div>
 </section>
 
+<section class="alt" id="apps">
+  <div class="wrap">
+    <h2 data-i18n="appsTitle"></h2>
+    <div class="cards">
+      <div class="card">
+        <div class="tag" data-i18n="app1tag"></div>
+        <h3 data-i18n="app1title"></h3>
+        <p data-i18n="app1desc"></p>
+        <a class="link" target="_blank" rel="noopener" href="https://psychometri.vercel.app/" data-i18n="appLink"></a>
+      </div>
+      <div class="card">
+        <div class="tag" data-i18n="app2tag"></div>
+        <h3 data-i18n="app2title"></h3>
+        <p data-i18n="app2desc"></p>
+        <a class="link" target="_blank" rel="noopener" href="https://matchstick-puzzles-lime.vercel.app" data-i18n="appLink"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="cta" data-i18n="ctaTitle"></div>
@@ -255,6 +276,7 @@ footer .sub{color:var(--sub);margin-top:6px}
 <script>
 const T = {
 en: {
+  name:"Aran Nachmias",
   role:"VP Product & COO",
   tagline:"Product & operations leadership · strategy to execution · scaling products, teams & systems. I turn complexity into clarity — across EdTech, nonprofits, AI and startups.",
   location:"Harish, Israel",
@@ -267,8 +289,9 @@ en: {
   m5d:"Managed Bar-Ilan University's national gifted-youth program: ~9,000 students in grades 6–10, across 30 centers, with ~70 teachers.",
   m6d:"Redesigned teacher recruitment at Bar-Ilan — hiring doctors, lawyers, physicists and engineers and training them as educators. Teacher pool grew 120%, dropout fell from 32% to 12%.",
   aboutTitle:"About",
-  aboutP1:"Senior operations and learning leader with 15+ years turning strategy into execution. I've built learning systems, operational frameworks and cross-functional teams from scratch — in a startup I co-founded, a national university program, a leading nonprofit, and a tech company scaling globally.",
-  aboutP2:"My track record is measurable: 88% digital adoption in 30 days during COVID, 120% growth in teacher recruitment, $1.5M raised to build an organizational LMS. A command and logistics background as an IDF reserves officer taught me that structure and empathy are not opposites.",
+  aboutP1:"I believe organizations win because of people — not dashboards. For over 15 years I've built systems, teams and products across education, nonprofits, tech and the military — always from the same place: a sense of mission. At PAAMONIM, at Bar-Ilan and in the IDF reserves I never managed 'resources'; I led people. And people follow someone who truly sees them — that's how I carry soldiers and employees with me.",
+  aboutP2:"What I'm proudest of is building leaders: employees who grew into managers in every organization I've worked in, and officer cadets who learned that command begins with caring. At the officers' course graduation I quoted Ben-Gurion: 'It is not enough for a commander to know his craft — he must love the person.' That is my management philosophy in civilian life too.",
+  aboutP3:"And I never stop learning. From building an LMS for a nonprofit to embedding AI in day-to-day operations, I bring technology everywhere I go — and get it adopted even by people who would rather avoid it. That's how buzzwords become measurable outcomes: 88% digital adoption in 30 days, 120% growth in teacher recruitment, $1.5M raised.",
   expTitle:"Experience",
   milTitle:"Military Service",
   skillsTitle:"Skills",
@@ -287,6 +310,12 @@ en: {
   ctaTitle:"Let's talk", ctaSub:"Open to Director / VP roles in operations, product and learning.",
   langBtn:"עברית",
   recsTitle:"Recommendations",
+  appsTitle:"Apps I Built",
+  appLink:"Open the app →",
+  app1tag:"EdTech", app1title:"Psychometri+",
+  app1desc:"A psychometric exam practice app I designed and built: original NITE-style questions across the verbal, quantitative and English sections, with full solutions and a focus on elimination techniques.",
+  app2tag:"Logic & Play", app2title:"Matchstick Puzzles",
+  app2desc:"A matchstick logic-puzzle app — move a match to solve. A small product that blends my love of learning with building things from scratch.",
   awardTag:"Commendation", awardName:"Certificate of Appreciation — Swords of Iron War",
   awardOrg:"Awarded by the IDF Military Police Commander · March 2025 — for wartime service and for leading the corps' reserve officers' course.",
   recs:[
@@ -339,6 +368,7 @@ en: {
   chips3:["Monday.com","CRM Systems","LMS Platforms","AI Tools (ChatGPT, Claude)","Zoom","E-learning Authoring"]
 },
 he: {
+  name:"ארן נחמיאס",
   role:"סמנכ״ל מוצר ותפעול (VP Product & COO)",
   tagline:"מנהיגות מוצר ותפעול · מאסטרטגיה לביצוע · הצמחת מוצרים, צוותים ומערכות. הופך מורכבות לבהירות — באדטק, מגזר שלישי, AI וסטארטאפים.",
   location:"חריש, ישראל",
@@ -351,8 +381,9 @@ he: {
   m5d:"ניהלתי את התוכנית הארצית למחוננים של אוניברסיטת בר-אילן: כ-9,000 תלמידים בכיתות ו׳–י׳, ב-30 מרכזים, עם כ-70 מורים.",
   m6d:"עיצבתי מחדש את גיוס המורים בבר-אילן — גיוס רופאים, עורכי דין, פיזיקאים ומהנדסים והכשרתם כמורים. מאגר המורים צמח ב-120%, הנשירה ירדה מ-32% ל-12%.",
   aboutTitle:"עליי",
-  aboutP1:"מנהל בכיר בתחומי התפעול והלמידה עם ניסיון של 15+ שנים בהפיכת אסטרטגיה לביצוע. בניתי מערכות למידה, תשתיות תפעוליות וצוותים חוצי-ארגון מאפס — בסטארטאפ שהקמתי, בתוכנית אוניברסיטאית ארצית, בעמותה מובילה ובחברת טכנולוגיה גלובלית.",
-  aboutP2:"התוצאות מדידות: 88% אימוץ דיגיטלי ב-30 יום בתקופת הקורונה, צמיחה של 120% בגיוס מורים, וגיוס 1.5 מיליון דולר להקמת LMS ארגוני. רקע פיקודי ולוגיסטי כקצין מילואים בצה״ל לימד אותי שמבנה ואמפתיה אינם הפכים.",
+  aboutP1:"אני מאמין שארגונים מנצחים בזכות אנשים — לא בזכות דשבורדים. יותר מ-15 שנה אני בונה מערכות, צוותים ומוצרים בחינוך, בעמותות, בהייטק ובצבא — ותמיד מאותו מקום: תחושת שליחות. בפעמונים, בבר-אילן ובמילואים מעולם לא ניהלתי 'משאבים' — הובלתי אנשים. ואנשים הולכים אחרי מי שבאמת רואה אותם — כך סוחפים אחריך חיילים ועובדים.",
+  aboutP2:"הדבר שאני הכי גאה בו הוא בניית מנהלים: עובדים שצמחו למובילים בכל ארגון שעבדתי בו, וצוערים שלמדו שפיקוד מתחיל באכפתיות. בטקס סיום קורס הקצינים ציטטתי את בן-גוריון: 'לא די שיידע המפקד את מלאכתו — עליו לאהוב את האדם'. זו תורת הניהול שלי גם באזרחות.",
+  aboutP3:"ואני לא מפסיק ללמוד. מהקמת LMS לעמותה ועד הטמעת AI בעבודה היומיומית — אני מביא טכנולוגיה לכל מקום שאליו אני מגיע, וגורם לה להיקלט גם אצל מי שמעדיף להתרחק ממנה. כך באזוורדים הופכים לתוצאות מדידות: 88% אימוץ דיגיטלי ב-30 יום, 120% צמיחה בגיוס מורים, 1.5 מיליון דולר שגויסו.",
   expTitle:"ניסיון תעסוקתי",
   milTitle:"שירות צבאי",
   skillsTitle:"כישורים",
@@ -371,6 +402,12 @@ he: {
 ctaTitle:"בואו נדבר", ctaSub:"פתוח לתפקידי Director / VP בתפעול, מוצר ולמידה.",
   langBtn:"English",
   recsTitle:"המלצות",
+  appsTitle:"אפליקציות שבניתי",
+  appLink:"לאפליקציה ←",
+  app1tag:"EdTech", app1title:"פסיכומטרי+",
+  app1desc:"אפליקציית תרגול לפסיכומטרי שעיצבתי ובניתי: שאלות מקוריות בסגנון הבחינה — מילולי, כמותי ואנגלית — עם פתרונות מלאים ודגש על טכניקות אלימינציה.",
+  app2tag:"חשיבה ומשחק", app2title:"חידות גפרורים",
+  app2desc:"אפליקציית חידות לוגיקה עם גפרורים — מזיזים גפרור ופותרים. פרויקט קטן שמחבר בין אהבת הלמידה שלי לבנייה של מוצר מאפס.",
   awardTag:"תעודת הערכה", awardName:"תעודת הערכה — מלחמת חרבות ברזל",
   awardOrg:"הוענקה על ידי מפקד המשטרה הצבאית · מרץ 2025 — על הפעילות במלחמת חרבות ברזל ועל הובלת קורס קצינים חילי במילואים.",
   recs:[
