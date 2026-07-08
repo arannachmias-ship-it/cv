@@ -80,6 +80,13 @@ h2::after{content:"";display:block;width:44px;height:3px;background:var(--accent
 .card .tag{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
 [dir="rtl"] .card .tag{letter-spacing:0}
 
+/* recommendations */
+.rec-card{border-inline-start:3px solid var(--accent)}
+.rec-card p{font-style:italic;color:#3a3f4c;font-size:15px}
+.rec-card .who{margin-top:14px;font-size:14px}
+.rec-card .who .nm{font-weight:700;color:var(--ink)}
+.rec-card .who .rl{color:var(--sub);display:block}
+
 /* two-col */
 .twocol{display:grid;grid-template-columns:1fr 1fr;gap:40px}
 @media(max-width:720px){.twocol{grid-template-columns:1fr}.hero h1{font-size:34px}.hero .wrap{gap:28px}}
@@ -138,21 +145,28 @@ footer .sub{color:var(--sub);margin-top:6px}
   </div>
 </section>
 
-<section class="alt" id="experience">
+<section class="alt" id="recs">
+  <div class="wrap">
+    <h2 data-i18n="recsTitle"></h2>
+    <div class="cards" id="reccards"></div>
+  </div>
+</section>
+
+<section id="experience">
   <div class="wrap">
     <h2 data-i18n="expTitle"></h2>
     <div id="jobs"></div>
   </div>
 </section>
 
-<section id="military">
+<section class="alt" id="military">
   <div class="wrap">
     <h2 data-i18n="milTitle"></h2>
     <div id="miljobs"></div>
   </div>
 </section>
 
-<section class="alt" id="skills">
+<section id="skills">
   <div class="wrap">
     <h2 data-i18n="skillsTitle"></h2>
     <div class="skill-group">
@@ -170,7 +184,7 @@ footer .sub{color:var(--sub);margin-top:6px}
   </div>
 </section>
 
-<section id="edu">
+<section class="alt" id="edu">
   <div class="wrap">
     <h2 data-i18n="eduTitle"></h2>
     <div class="cards">
@@ -184,11 +198,16 @@ footer .sub{color:var(--sub);margin-top:6px}
         <h3 data-i18n="certName"></h3>
         <p data-i18n="certOrg"></p>
       </div>
+      <div class="card">
+        <div class="tag" data-i18n="awardTag"></div>
+        <h3 data-i18n="awardName"></h3>
+        <p data-i18n="awardOrg"></p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="posts">
+<section id="posts">
   <div class="wrap">
     <h2 data-i18n="postsTitle"></h2>
     <div class="cards">
@@ -254,6 +273,17 @@ en: {
   p3desc:"Graduation ceremony of the reserve officers' course I commanded — on leadership that starts with caring for your people.",
   ctaTitle:"Let's talk", ctaSub:"Open to Director / VP roles in operations, product and learning.",
   langBtn:"עברית",
+  recsTitle:"Recommendations",
+  awardTag:"Commendation", awardName:"Certificate of Appreciation — Swords of Iron War",
+  awardOrg:"Awarded by the IDF Military Police Commander · March 2025 — for wartime service and for leading the corps' reserve officers' course.",
+  recs:[
+    {n:"Guy Sinter",r:"CTO",url:"https://www.linkedin.com/in/guy-sinter/",
+     txt:"\u201CAran is an exceptionally gifted individual who possesses a rare combination of quick thinking, analytical prowess, and a strong business orientation. He has the remarkable ability to swiftly analyze complex situations, enabling him to make informed decisions that lead to high-quality products and successful outcomes.\u201D"},
+    {n:"Omer Hacohen",r:"Product Designer & Manager",url:"https://www.linkedin.com/in/omer-hacohen-2ba35794/",
+     txt:"\u201CAran's exceptional professionalism, ability to learn quickly, and pleasant demeanor make him a standout professional in the field\u2026 His collaborative nature and open-mindedness create an environment that fosters creativity and enables effective teamwork\u2026 I wholeheartedly recommend Aran for any Product Manager role.\u201D"},
+    {n:"\u05E2\u05DE\u05D9\u05D7\u05D9 \u05E8\u05DE\u05E8",r:"CEO, Puah Institute",url:"https://www.linkedin.com/in/\u05E2\u05DE\u05D9\u05D7\u05D9-\u05E8\u05DE\u05E8-a8184643/",
+     txt:"\u201C\u05D1\u05E2\u05D1\u05D5\u05D3\u05EA\u05D9 \u05E2\u05DD \u05D0\u05E8\u05DF, \u05D6\u05DB\u05D9\u05EA\u05D9 \u05DC\u05D4\u05DB\u05D9\u05E8 \u05DE\u05E0\u05D4\u05DC \u05E9\u05D9\u05E9 \u05D1\u05D5 \u05E9\u05D9\u05DC\u05D5\u05D1 \u05E9\u05DC \u05E9\u05D0\u05D9\u05E4\u05D4 \u05DC\u05D7\u05D3\u05E9\u05E0\u05D5\u05EA \u05D5\u05E9\u05DC \u05EA\u05E2\u05D5\u05D6\u05D4 \u05D9\u05D7\u05D3 \u05E2\u05DD \u05E1\u05E7\u05E8\u05E0\u05D5\u05EA, \u05DC\u05DE\u05D9\u05D3\u05D4 \u05DE\u05EA\u05DE\u05D3\u05EA \u05D5\u05D4\u05EA\u05D1\u05D5\u05E0\u05E0\u05D5\u05EA \u05E2\u05E6\u05DE\u05D9\u05EA. \u05DE\u05D9 \u05E9\u05DE\u05D7\u05E4\u05E9 \u05E9\u05D5\u05EA\u05E3 \u05DC\u05D4\u05D5\u05D1\u05DC\u05EA \u05DE\u05D4\u05DC\u05DB\u05D9\u05DD \u05D0\u05E8\u05D2\u05D5\u05E0\u05D9\u05D9\u05DD \u05DE\u05E9\u05DE\u05E2\u05D5\u05EA\u05D9\u05D9\u05DD, \u05D9\u05DE\u05E6\u05D0 \u05D1\u05D0\u05E8\u05DF \u05E9\u05D5\u05EA\u05E3 \u05DE\u05E6\u05D5\u05D9\u05DF.\u201D"}
+  ],
   jobs:[
     {t:"VP Product & COO",o:"Eyo",d:"Feb 2025 – Present · Israel",b:[
       "Lead the full product lifecycle across mobile apps, admin systems and internal tools — from vision to execution.",
@@ -316,8 +346,19 @@ he: {
   p2desc:"קרוסלה בת 12 עמודים שמתרגמת תורת לחימה מבצעית לפלייבוק פרקטי ל-Runway, צוותים ו-Product-Market Fit.",
   p3tag:"מנהיגות", p3title:"פיקוד על קורס קציני המילואים",
   p3desc:"טקס סיום קורס הקצינים שעליו פיקדתי — על מנהיגות שמתחילה באהבת האדם, ברוח דברי בן-גוריון.",
-  ctaTitle:"בואו נדבר", ctaSub:"פתוח לתפקידי Director / VP בתפעול, מוצר ולמידה.",
+ctaTitle:"בואו נדבר", ctaSub:"פתוח לתפקידי Director / VP בתפעול, מוצר ולמידה.",
   langBtn:"English",
+  recsTitle:"המלצות",
+  awardTag:"תעודת הערכה", awardName:"תעודת הערכה — מלחמת חרבות ברזל",
+  awardOrg:"הוענקה על ידי מפקד המשטרה הצבאית · מרץ 2025 — על הפעילות במלחמת חרבות ברזל ועל הובלת קורס קצינים חילי במילואים.",
+  recs:[
+    {n:"עמיחי רמר",r:"מנכ\"ל מכון פועה",url:"https://www.linkedin.com/in/עמיחי-רמר-a8184643/",
+     txt:"״בעבודתי עם ארן, זכיתי להכיר מנהל שיש בו שילוב של שאיפה לחדשנות ושל תעוזה יחד עם סקרנות, למידה מתמדת והתבוננות עצמית. מי שמחפש שותף להובלת מהלכים ארגוניים משמעותיים, ימצא בארן שותף מצויין.״"},
+    {n:"Guy Sinter",r:"CTO",url:"https://www.linkedin.com/in/guy-sinter/",
+     txt:"“Aran is an exceptionally gifted individual who possesses a rare combination of quick thinking, analytical prowess, and a strong business orientation. He has the remarkable ability to swiftly analyze complex situations, enabling him to make informed decisions that lead to high-quality products and successful outcomes.”"},
+    {n:"Omer Hacohen",r:"Product Designer & Manager",url:"https://www.linkedin.com/in/omer-hacohen-2ba35794/",
+     txt:"“Aran's exceptional professionalism, ability to learn quickly, and pleasant demeanor make him a standout professional in the field… His collaborative nature and open-mindedness create an environment that fosters creativity and enables effective teamwork… I wholeheartedly recommend Aran for any Product Manager role.”"}
+  ],
   jobs:[
     {t:"סמנכ״ל מוצר ותפעול",o:"Eyo",d:"פברואר 2025 – היום · ישראל",b:[
       "מוביל את מחזור חיי המוצר המלא — אפליקציות מובייל, מערכות אדמין וכלים פנימיים — מחזון ועד ביצוע.",
@@ -376,6 +417,7 @@ function render(){
     </div>`).join('');
   document.getElementById('jobs').innerHTML = jobHtml(t.jobs);
   document.getElementById('miljobs').innerHTML = jobHtml(t.mil);
+  document.getElementById('reccards').innerHTML = t.recs.map(r=>`<div class="card rec-card"><p>${r.txt}</p><div class="who"><a href="${r.url}" target="_blank" rel="noopener" class="nm">${r.n}</a><span class="rl">${r.r}</span></div></div>`).join('');
   const chips=(id,arr,hl)=>{document.getElementById(id).innerHTML=arr.map((c,i)=>`<span class="chip${hl&&i<4?' hl':''}">${c}</span>`).join('');};
   chips('chips1',t.chips1,true); chips('chips2',t.chips2,false); chips('chips3',t.chips3,false);
 }
